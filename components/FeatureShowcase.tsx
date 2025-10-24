@@ -1,11 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { PhoneMockup } from './Icons';
 
+const getAssetUrl = (path: string) => {
+    const base = (import.meta as any).env?.BASE_URL || '/';
+    return `${base}${path}`;
+};
+
 // Slide 1: F1 Image
 const Screen1Initial: React.FC = () => (
     <div className="w-full h-full bg-white flex items-center justify-center">
         <img 
-            src="/F1.png" 
+            src={getAssetUrl('F1.png')}
             alt="Initial Feature" 
             className="w-full h-full object-contain"
         />
@@ -16,7 +21,7 @@ const Screen1Initial: React.FC = () => (
 const Screen2Active: React.FC = () => (
     <div className="w-full h-full bg-white flex items-center justify-center">
         <img 
-            src="/F2.png" 
+            src={getAssetUrl('F2.png')}
             alt="Digital Card Feature" 
             className="w-full h-full object-contain"
         />
@@ -27,7 +32,7 @@ const Screen2Active: React.FC = () => (
 const Screen3Link: React.FC = () => (
     <div className="w-full h-full bg-white flex items-center justify-center">
         <img 
-            src="/F3.png" 
+            src={getAssetUrl('F3.png')}
             alt="Link Account Feature" 
             className="w-full h-full object-contain"
         />
@@ -38,7 +43,7 @@ const Screen3Link: React.FC = () => (
 const Screen4Pay: React.FC = () => (
     <div className="w-full h-full bg-white flex items-center justify-center">
         <img 
-            src="/F4.png" 
+            src={getAssetUrl('F4.png')}
             alt="Autopay Feature" 
             className="w-full h-full object-contain"
         />
@@ -49,7 +54,7 @@ const Screen4Pay: React.FC = () => (
 const Screen5Autopay: React.FC = () => (
     <div className="w-full h-full bg-white flex items-center justify-center">
         <img 
-            src="/F5.png" 
+            src={getAssetUrl('F5.png')}
             alt="Autopay Setup Feature" 
             className="w-full h-full object-contain"
         />

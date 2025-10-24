@@ -3,6 +3,11 @@ import React from 'react';
 import { useOnScreen } from '../hooks/useOnScreen';
 import { AppIcon } from './Icons';
 
+const getAssetUrl = (path: string) => {
+    const base = (import.meta as any).env?.BASE_URL || '/';
+    return `${base}${path}`;
+};
+
 const Hero: React.FC = () => {
   const [ref, isVisible] = useOnScreen<HTMLElement>({ threshold: 0.1 });
 
@@ -45,22 +50,22 @@ const Hero: React.FC = () => {
         <div className="relative w-full max-w-7xl h-[450px] sm:h-[550px] md:h-[1050px]">
           {/* Left Phone */}
           <img 
-            src="/1.png" 
-            alt="Seen App on iPhone lock screen" 
+            src={getAssetUrl('1.png')}
+            alt="Seen App on iPhone lock screen"
             className={`absolute top-1 left-1/2 w-auto h-full max-h-[400px] sm:max-h-[500px] md:max-h-[975px] z-0 ${animationClass('delay-[600ms]')} transform -translate-x-[105%] sm:-translate-x-[110%] md:-translate-x-[120%] -translate-y-1/2 -rotate-[12deg] md:-rotate-[15deg]`}
           />
           
           {/* Center Phone */}
           <img 
-            src="/2.png" 
-            alt="Seen App dashboard on iPhone" 
+            src={getAssetUrl('2.png')}
+            alt="Seen App dashboard on iPhone"
             className={`absolute top-1 left-1/2 w-auto h-full max-h-[450px] sm:max-h-[550px] md:max-h-[1050px] z-10 ${animationClass('delay-300')} transform -translate-x-1/2 -translate-y-[55%]`} 
           />
           
           {/* Right Phone */}
           <img 
-            src="/3.png" 
-            alt="Seen App digital card on iPhone" 
+            src={getAssetUrl('3.png')}
+            alt="Seen App digital card on iPhone"
             className={`absolute top-1 left-1/2 w-auto h-full max-h-[400px] sm:max-h-[500px] md:max-h-[975px] z-0 ${animationClass('delay-[800ms]')} transform translate-x-[5%] sm:translate-x-[10%] md:translate-x-[20%] -translate-y-1/2 rotate-[12deg] md:rotate-[15deg]`}
           />
         </div>

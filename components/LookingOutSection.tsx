@@ -3,6 +3,11 @@ import React from 'react';
 import { useOnScreen } from '../hooks/useOnScreen';
 import { SwipeIcon } from './Icons';
 
+const getAssetUrl = (path: string) => {
+    const base = (import.meta as any).env?.BASE_URL || '/';
+    return `${base}${path}`;
+};
+
 const FeatureCard: React.FC<{
   className?: string;
   bgContent: React.ReactNode;
@@ -50,7 +55,7 @@ const LookingOutSection: React.FC = () => {
                 <div className="relative h-[420px] sm:h-[500px] md:h-[550px] mt-12 sm:mt-16 max-w-4xl mx-auto">
                     <FeatureCard
                         className="w-48 h-64 sm:w-60 sm:h-80 md:w-72 md:h-96 transform -rotate-12 left-[2%] sm:left-0 md:left-[5%] top-12 sm:top-10"
-                        bgContent={<img src="/x1.png" alt="Mountain landscape" className="w-full h-full object-cover" />}
+                        bgContent={<img src={getAssetUrl('x1.png')} alt="Mountain landscape" className="w-full h-full object-cover" />}
                         animationDelay="400ms"
                         isVisible={isVisible}
                     >
@@ -60,7 +65,7 @@ const LookingOutSection: React.FC = () => {
                     
                     <FeatureCard
                         className="z-0 w-56 h-80 sm:w-72 sm:h-[400px] md:w-80 md:h-[480px] left-1/2 -translate-x-[15%] sm:-translate-x-[20%] top-8 sm:top-16 md:top-4 transform rotate-6"
-                        bgContent={<img src="/x2.png" alt="Woman drinking coffee" className="w-full h-full object-cover" />}
+                        bgContent={<img src={getAssetUrl('x2.png')} alt="Woman drinking coffee" className="w-full h-full object-cover" />}
                         animationDelay="0ms"
                         isVisible={isVisible}
                     >

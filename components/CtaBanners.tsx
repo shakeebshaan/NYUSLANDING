@@ -20,7 +20,7 @@ const CtaBanners: React.FC = () => {
           <div className="container mx-auto max-w-4xl px-4">
               <div 
                   className="relative p-6 sm:p-8 md:p-12 rounded-2xl bg-cover bg-center overflow-hidden min-h-[240px] sm:h-64 flex flex-col justify-center items-center text-center"
-                  style={{ backgroundImage: "url('https://picsum.photos/seed/clothes/1200/400')" }}
+                  style={{ backgroundImage: `url(/x2.png)` }}
                 >
                 <div className="absolute inset-0 bg-black/30"></div>
                 <div className="relative text-white">
